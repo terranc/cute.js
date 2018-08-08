@@ -16,43 +16,74 @@ Cute.api.post(action, data, callback, cache, async, options)
 
 ```js
 // Alert Modal
-new Cute.ui.dialog().alert('Hello', options || {});
+var dialog = new Cute.ui.dialog().alert('Hello', options || {});
 
 // Notice
-new Cute.ui.dialog().notice('Hello', options || {});
+var dialog = new Cute.ui.dialog().notice('Hello', options || {});
 
 // Confirm
-new Cute.ui.dialog().confirm('Are you sure you want to delete this item?', options || {});
+var dialog = new Cute.ui.dialog().confirm('Are you sure you want to delete this item?', options || {});
 
 // Loading
-new Cute.ui.dialog().loading('Loading Text...', options || {});
+var dialog = new Cute.ui.dialog().loading('Loading Text...', options || {});
 
 // Ajax
-new Cute.ui.dialog().ajax('Dialog Title', {
+var dialog = new Cute.ui.dialog().ajax('Dialog Title', {
   action: 'xxx/get',  // api url
   params: {}, // querystring
   ajaxoptions: {} // ajax options
 });
 
 // Layer
-new Cute.ui.dialog().layer('Dialog Title', {
+var dialog = new Cute.ui.dialog().layer('Dialog Title', {
   content: '#template'
 });
 
 // Iframe
-new Cute.ui.dialog().iframe('Dialog Title', {
+var dialog = new Cute.ui.dialog().iframe('Dialog Title', {
   url: 'xxx/xxx.html' // iframe src
 });
 
 // Tooltip
-new Cute.ui.dialog().tooltip('layer', 'Tooltips', options || {});
+var dialog = new Cute.ui.dialog().tooltip('layer', 'Tooltips', options || {});
 
 // Suggest
-new Cute.ui.dialog().suggest('Suggest text', options || {});
+var dialog = new Cute.ui.dialog().suggest('Suggest text', options || {});
 
 // Growl
-new Cute.ui.dialog().growl('Growl text', options || {});
+var dialog = new Cute.ui.dialog().growl('Growl text', options || {});
+
+
+// Methods
+dialog.resize({
+  width: xxx,  // optional
+  height: xxx,  // optional
+})
+
+
+dialog.setClassName(name)
+
+dialog.setButtons(buttions) // (array) buttons
+
+dialog.setPos(pos)  // (object) pos: css position
+
+dialog.setTitle(title)
+
+dialog.setFoot(html, ?reset)  // reset: `true` is replace; `false` is append
+
+dialog.setContent(html) // set inner content
+
+dialog.setHtml(html)    // set wrap content
+
+dialog.show()
+
+dialog.hide()
+
+dialog.close()
+
+dialog.toggle();
 ```
+
 
 ## Pager
 
